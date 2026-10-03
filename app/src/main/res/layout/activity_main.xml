@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rootFrame"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg">
+
+    <LinearLayout
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+            <LinearLayout
+                android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
+                <TextView android:id="@+id/title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="TENDA CONTROL" android:textColor="@color/text" android:textSize="24sp" android:textStyle="bold"/>
+                <TextView android:id="@+id/status" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Tenda: проверка…" android:textColor="@color/muted" android:textSize="13sp"/>
+            </LinearLayout>
+            <Button android:id="@+id/refresh" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="↻" android:textSize="20sp"/>
+        </LinearLayout>
+
+        <EditText android:id="@+id/search" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="12dp" android:layout_marginRight="12dp" android:hint="Поиск устройства или IP" android:singleLine="true" android:textColor="@color/text" android:textColorHint="@color/muted"/>
+
+        <HorizontalScrollView android:layout_width="match_parent" android:layout_height="wrap_content" android:scrollbars="none">
+            <LinearLayout android:id="@+id/actions" android:layout_width="wrap_content" android:layout_height="wrap_content" android:padding="8dp" android:orientation="horizontal"/>
+        </HorizontalScrollView>
+
+        <ScrollView android:id="@+id/scroll" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:fillViewport="true">
+            <LinearLayout android:id="@+id/deviceList" android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="12dp" android:orientation="vertical"/>
+        </ScrollView>
+
+        <TextView android:id="@+id/footer" android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="10dp" android:gravity="center" android:text="Только локальная сеть • Пароль хранится на телефоне" android:textColor="@color/muted" android:textSize="11sp"/>
+    </LinearLayout>
+
+    <WebView android:id="@+id/web" android:layout_width="match_parent" android:layout_height="match_parent" android:visibility="gone"/>
+</FrameLayout>
